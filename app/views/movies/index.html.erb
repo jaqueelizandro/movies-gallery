@@ -1,0 +1,12 @@
+<h1>Results for movies search: "<%= params[:search] %>"</h1>
+
+<% unless params[:search].empty? %>
+    <% @movies.each do |movie| %>
+        <p><%= link_to image_tag(movie["image"], :class => 'thumb'), movie_path(movie["id"]) %> 
+        <%= link_to movie["title"], movie_path(movie["id"]) %> 
+        <%= link_to movie["description"], movie_path(movie["id"]) %></p>
+    <% end %>
+<% end %>
+
+
+

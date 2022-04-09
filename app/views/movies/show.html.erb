@@ -1,0 +1,9 @@
+<h1><%= @movie["title"] %></h1>
+<p><%= @movie["year"] %> | <%= @movie["runtimeStr"] %> | <%= @movie["genres"] %></p>
+
+<p>Director: <%= @movie["directors"] %></p>
+
+<p>Storyline:</p>
+<p><%= @movie["plot"] %></p>
+
+<%= image_tag @movie["image"], :class => "thumb" %>
