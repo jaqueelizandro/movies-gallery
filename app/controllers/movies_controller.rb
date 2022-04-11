@@ -27,8 +27,4 @@ class MoviesController < ApplicationController
       )
     end
   end
-
-  def set_review
-    @review = @movie.review.find(params[:id])
-  end
 end

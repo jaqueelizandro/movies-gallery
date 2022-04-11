@@ -1,0 +1,11 @@
+
+
+<%= form_for [@movie, @review] do |f| %>
+  <%= f.label :rate %>
+  <%= f.text_field :rate %>
+
+  <%= f.label :review %>
+  <%= f.text_area :review %>
+
+  <%= f.submit  %>
+<% end %>

@@ -1,18 +1,29 @@
 class ReviewsController < ApplicationController
-  before_action :get_movie
-  before_action :set_review, only: [:show, :edit, :update, :destroy]
   
   def index
   end
 
   def new
+    @movie = Movie.find params[:movie_id]
+    @review = @movie.reviews.build
   end
 
   def create
-    @review = @movie.reviews.create(review_params)
+    movie = Movie.find params[:movie_id]
+    movie.reviews.create(review_params)
+    redirect_to movie_path(movie.imdbid)
   end
 
   def edit
+    @movie = Movie.find params[:movie_id]
+    @review = Review.find params[:id]
+  end
+
+  def update
+    movie = Movie.find params[:movie_id]
+    review = Review.find params[:id]
+    review.update(review_params)
+    redirect_to movie_path(movie.imdbid)
   end
 
   def show
@@ -22,9 +33,4 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:rate, :review, :user_id, :movie_id)
   end
-
-  def get_movie
-    @movie = Movie.find(params[:movie_id])
-  end
-
 end
