@@ -4,3 +4,10 @@
     <%= text_field_tag(:search, params[:search]) %>
     <%= submit_tag "Search" %>
 <% end %>
+
+<h2>Recently added:</h2>
+<% @movies.each do |movie| %>
+    <div class="display">
+        <p><%= link_to image_tag(movie[:image], :class => 'thumb'), movie_path(movie[:imdbid]) %></p>
+    </div>
+<% end %>

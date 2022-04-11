@@ -1,4 +1,3 @@
 class ApplicationRecord < ActiveRecord::Base
-  self.abstract_class = true # what is this?
-  require 'net/http'
+  self.abstract_class = true
 end

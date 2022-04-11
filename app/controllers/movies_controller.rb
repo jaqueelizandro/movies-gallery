@@ -7,12 +7,6 @@ class MoviesController < ApplicationController
     @movies = JSON.parse(Net::HTTP.get(uri))["results"]
   end
 
-  def new
-  end
-
-  def edit
-  end
-
   def show
     movie = Movie.find_by(imdbid: params[:id])
     unless movie.nil?
@@ -32,5 +26,9 @@ class MoviesController < ApplicationController
         imdbid: movie["id"]
       )
     end
+  end
+
+  def set_review
+    @review = @movie.review.find(params[:id])
   end
 end

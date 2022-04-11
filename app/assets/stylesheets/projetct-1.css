@@ -1,3 +1,7 @@
 .thumb {
     height: 12em;
 }
+
+.display {
+    display: inline-block;
+}
