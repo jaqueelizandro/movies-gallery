@@ -8,12 +8,20 @@
 
 <%= image_tag @movie[:image], :class => "thumb" %>
 
-<p><%= link_to "+ Review", new_movie_review_path(@movie.id) %></p>
+<% if @current_user.present? %>
+    <p><%= link_to "+ Review", new_movie_review_path(@movie.id) %></p>
+<% else %>
+    <p><%= link_to "+ Review", login_path %></p>
+<% end %>
 
-<% @movie.reviews.each do |review| %>
-    <p><%= review[:rate] %></p>
+<% @movie.reviews.order(created_at: :desc).each do |review| %>
+    <p>User: <%= review.user[:email] %></p>
+    <p><%= review[:created_at].strftime '%a, %B %d, %Y - %l:%M %p'  %></p>
+    <p>Your rating: <%= review[:rate] %></p>
     <p><%= review[:review] %></p>
     <p><%= link_to "Edit Review", edit_movie_review_path(@movie, review) %></p>
     <p><%= link_to "Delete Review", movie_review_path(@movie, review), :method => 'delete', :data => {:confirm => 'Are you sure?'} %></p>
     ------
 <% end %>
+
+
