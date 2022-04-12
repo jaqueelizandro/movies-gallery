@@ -13,7 +13,7 @@
 <% @movie.reviews.each do |review| %>
     <p><%= review[:rate] %></p>
     <p><%= review[:review] %></p>
-    <p><%= link_to "Edit", edit_movie_review_path(@movie.id, review.id) %></p>
-    <p><%= link_to "Delete", edit_movie_review_path(@movie.id, review.id), :method => 'delete', :data => {:confirm => 'Are you sure?'} %></p>
+    <p><%= link_to "Edit Review", edit_movie_review_path(@movie, review) %></p>
+    <p><%= link_to "Delete Review", movie_review_path(@movie, review), :method => 'delete', :data => {:confirm => 'Are you sure?'} %></p>
     ------
 <% end %>

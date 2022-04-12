@@ -2,7 +2,7 @@
 
 <%= form_for [@movie, @review] do |f| %>
   <%= f.label :rate %>
-  <%= f.text_field :rate %>
+  <%= f.text_field :rate, :required => true %>
 
   <%= f.label :review %>
   <%= f.text_area :review %>
