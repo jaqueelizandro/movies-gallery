@@ -19,9 +19,11 @@
     <p><%= review[:created_at].strftime '%a, %B %d, %Y - %l:%M %p'  %></p>
     <p>Your rating: <%= review[:rate] %></p>
     <p><%= review[:review] %></p>
-    <p><%= link_to "Edit Review", edit_movie_review_path(@movie, review) %></p>
-    <p><%= link_to "Delete Review", movie_review_path(@movie, review), :method => 'delete', :data => {:confirm => 'Are you sure?'} %></p>
-    ------
+    <% if @current_user.id == review.user_id %>
+        <p><%= link_to "Edit Review", edit_movie_review_path(@movie, review) %></p>
+        <p><%= link_to "Delete Review", movie_review_path(@movie, review), :method => 'delete', :data => {:confirm => 'Are you sure?'} %></p>
+        ------
+    <% end %>
 <% end %>
 
 
