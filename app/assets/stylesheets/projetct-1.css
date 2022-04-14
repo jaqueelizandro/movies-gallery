@@ -1,7 +1,254 @@
-.thumb {
-    height: 12em;
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+/* * {
+    border: 1px solid lime
+} */
+
+body {
+    max-width: 960px;
+    margin: 0 auto;
+    font-family: 'Nunito', sans-serif;
+    background-color: rgb(242,241,227);
 }
 
-.display {
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(92,109,83);
+    height: 5em;
+    padding-right:10px;
+}
+
+nav .home {
+    font-size: 2em;
+    color: rgb(242,241,227);
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav .login {
+    color: rgb(242,241,227);
+    font-size: 16px;
     display: inline-block;
+    text-align: right;
+}
+
+nav p {
+    margin: 0;
+}
+
+.search {
+    background-color: rgb(92,109,83);
+    height: 4em;
+    display: flex;
+    justify-content: end;
+    padding-right: 1em;
+}
+
+.search .field {
+    background-color: rgb(242,241,227);
+    height: 3em;
+    width: 35em;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border: none;
+    outline: none;
+}
+
+.search .submit {
+    background-color: rgb(242,241,227);
+    height: 35px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.home-container h4 {
+    color: rgb(60,58,58);
+    margin: 0;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.home-display {
+    display: flex;
+    justify-content: space-around;
+    height: 15em;
+}
+
+.home-display .image {
+    height: 12em;
+    border-radius: 4px;
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.2);
+}
+
+.home-display .image:hover {
+    height: 12.5em;
+    border-radius: 10px;
+    box-shadow: 8px 8px 3px rgba(0, 0, 0, 0.7);
+}
+
+.index-container .image {
+    height: 10em;
+}
+
+.index-container .index1 {
+    background-color: rgb(223,215,164);
+    height: 10em;
+}
+
+.index-container p {
+    margin: 3px;
+}
+
+.index-container .link {
+    color: rgb(92,109,83);
+}
+
+.show-movie {
+    height: 30em;
+    color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+}
+
+.show-movie .image {
+    float: left;
+    height: 25em;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.show-movie h1 {
+    font-size: 35px;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.show-movie h6 {
+    font-size: 12px;
+    margin: 0;
+}
+
+.show-movie p {
+    font-size: 12px;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.show-movie .plot {
+    font-size: 15px;
+    text-align: justify;
+    margin: 0;
+}
+
+.show-movie .link-review {
+    color: rgb(92,109,83);
+}
+
+
+.show-review {
+    border-bottom: 1px solid rgb(120,118,118);
+    color: rgb(242,241,227);
+    background-color: rgb(60,58,58);
+    padding: 15px;
+}
+
+.show-review .link-review {
+    color: rgb(223,215,164);
+    padding-top: 1em;
+    padding-right: 3em;
+    font-size: 10px;
+}
+
+.show-review p {
+    margin: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.show-review .user-date {
+    font-size: 10px;
+}
+
+.review {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: left;
+}
+
+.review>input {
+    display: none
+}
+
+.review>label {
+    position: relative;
+    width: 1em;
+    font-size: 20px;
+    color: #FFD600;
+    cursor: pointer
+}
+
+.rate {
+    position: relative;
+    width: 1em;
+    font-size: 20px;
+    color: #FFD600;
+    content: "\2605"
+}
+
+.review>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0
+}
+
+.review>label:hover:before,
+.review>label:hover~label:before {
+    opacity: 1 !important
+}
+
+.review>input:checked~label:before {
+    opacity: 1
+}
+
+.review:hover>input:checked~label:before {
+    opacity: 0.4
+}
+
+.form-review {
+    background-color: rgb(242,241,227);
+    color: rgb(60,58,58);
+}
+
+.form-review .review {
+    padding-bottom: 10px;
+}
+
+.form-review textarea {
+    height: 10em;
+    width: 50em;
+    border-radius: 4px;
+    border-color: rgb(120,118,118);
+}
+
+.form-review .button {
+    height: 3em;
+    width: 50em;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(120,118,118);
+    color: rgb(242,241,227);
+    font-family: 'Nunito', sans-serif;
+}
+
+.review-container .title {
+    color: rgb(60,58,58);
+    margin: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.review-container .image {
+    height: 15em;
+    float: left;
+    padding-right: 2em;
 }

@@ -1,12 +1,15 @@
-<h1>Results for movies search: "<%= params[:search] %>"</h1>
+<div class="index-container">
+    <h4>RESULTS FOR "<%= params[:search] %>"</h4>
 
-<% unless params[:search].empty? %>
-    <% @movies.each do |movie| %>
-        <p><%= link_to image_tag(movie["image"], :class => 'thumb'), movie_path(movie["id"]) %> 
-        <%= link_to movie["title"], movie_path(movie["id"]) %> 
-        <%= link_to movie["description"], movie_path(movie["id"]) %></p>
+    <% unless params[:search].empty? %>
+        <% @movies.each do |movie| %>
+        <div class="<%= cycle("index1", "index2") %>">
+            <p><%= link_to image_tag(movie["image"], class: 'image'), movie_path(movie["id"]) %> 
+            <%= link_to movie["title"], movie_path(movie["id"]), class: "link" %> 
+            <%= link_to movie["description"], movie_path(movie["id"]), class: "link" %></p>
+        </div>
+        <% end %>
     <% end %>
-<% end %>
-
+</div>
 
 

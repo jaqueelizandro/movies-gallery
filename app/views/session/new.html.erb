@@ -1,11 +1,13 @@
-<h1>Log In</h1>
+<h4>SIGN-IN</h4>
 
-<%= form_tag login_path do |f| %>
+<%= form_tag login_path, local: true do |f| %>
     <%= label_tag :email %>
     <%= email_field_tag :email %>
 
     <%= label_tag :password %>
     <%= password_field_tag :password %>
 
-    <%= submit_tag "Sign in" %>
+    <%= submit_tag "Sign-in" %>
 <% end %>
+
+Don't you have a account yet? <%= link_to "CREATE YOUR ACCOUNT", new_user_path %>

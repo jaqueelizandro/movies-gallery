@@ -1,3 +1,10 @@
-<h1>edit review</h1>
+<div class="review-container">
+    <h4 class="title">EDIT YOUR REVIEW</h4>
 
-<%= render :partial => 'form' %>
+    <%= image_tag @movie.image, class: "image" %>
+        
+    <%= @movie.title %>
+    (<%= @movie.year %>)
+
+    <%= render :partial => 'form' %>
+</div>
