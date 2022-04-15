@@ -1,13 +1,21 @@
-<h4>SIGN-IN</h4>
+<div class="sign-in">
+  <h4>SIGN-IN</h4>
 
-<%= form_tag login_path, local: true do |f| %>
-    <%= label_tag :email %>
-    <%= email_field_tag :email %>
+  <div class="form">
+    <%= form_tag login_path, local: true do |f| %>
+        <%= label_tag :email %>
+        <%= email_field_tag :email %>
 
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+        <%= label_tag :password %>
+        <%= password_field_tag :password %>
 
-    <%= submit_tag "Sign-in" %>
-<% end %>
+        <%= submit_tag "Sign-in" %>
+    <% end %>
+  </div>
 
-Don't you have a account yet? <%= link_to "CREATE YOUR ACCOUNT", new_user_path %>
+  <% if flash.now[:message] %>
+    <p class="message"><%= flash.now[:message] %></p>
+  <% end %>
+
+  <p>Don't you have a account yet? <%= link_to "CREATE YOUR ACCOUNT", new_user_path %></p>
+</div>
