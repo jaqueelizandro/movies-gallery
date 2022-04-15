@@ -11,9 +11,15 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    review = @movie.reviews.create(review_params)
-    @current_user.reviews << review
-    redirect_to movie_path(@movie.imdbid)
+    if params[:rate].present?
+      review = @movie.reviews.create(review_params)
+      @current_user.reviews << review
+      redirect_to movie_path(@movie.imdbid)
+    else
+      flash.now[:message] = "Rate is a required field."
+      @review = @movie.reviews.build
+      render 'new'
+    end
   end
 
   def edit
@@ -34,7 +40,7 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:rate, :review, :user_id, :movie_id)
+    params.require(:review).permit(:rate, :review, :user_id, :movie_id, :title)
   end
 
   def find_movie
