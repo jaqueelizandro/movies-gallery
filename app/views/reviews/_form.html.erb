@@ -14,11 +14,13 @@
       <%= f.radio_button :rate, "2" %>
       <%= f.label :rate, "☆", value: "2" %>
       
-      <%= f.radio_button :rate, "1" %>
+      <%= f.radio_button :rate, "1"  %>
       <%= f.label :rate, "☆", value: "1" %>
     </div>
 
-    <%= f.text_area :review, placeholder: "Write your review here..." %>
+    <p><%= f.text_field :title, class: "comment-title" %></p>
+
+    <p><%= f.text_area :review, placeholder: "Write your review here...", class: "comment" %></p>
 
     <p><%= f.submit class: "button" %></p>
     

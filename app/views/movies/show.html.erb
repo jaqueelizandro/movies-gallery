@@ -1,35 +1,36 @@
 <div class="show-movie">
-    <%= image_tag @movie[:image], class: "image" %>
-    <h1><%= @movie["title"] %></h1>
-    <h6><%= @movie["year"] %> | <%= @movie["runtimeStr"] %> | <%= @movie["genres"] %></h6>
-    <p class="director"><%= "Director".pluralize(@movie["director"].split(",").length)%>: <%= @movie["director"] %></p>
-    <p class="storyline">Storyline:</p>
-    <p class="plot"><%= @movie["plot"] %></p>
+  <div class="info-movie">
+      <%= image_tag @movie[:image], class: "image" %>
+      <h1><%= @movie["title"] %></h1>
+      <h6><%= @movie["year"] %> | <%= @movie["runtimeStr"] %> | <%= @movie["genres"] %></h6>
+      <p class="director"><%= "Director".pluralize(@movie["director"].split(",").length)%>: <%= @movie["director"] %></p>
+      <p class="storyline">Storyline:</p>
+      <p class="plot"><%= @movie["plot"] %></p>
 
-    <% if @current_user.present? %>
-        <p class="link-review" ><%= link_to "+ Review this title", new_movie_review_path(@movie.id) %></p>
-    <% else %>
-        <p class="link-review" ><%= link_to "+ Review this title", login_path %></p>
-    <% end %>
-</div>
+      <% if @current_user.present? %>
+          <p class="link-review" ><%= link_to "+ Review this title", new_movie_review_path(@movie.id) %></p>
+      <% else %>
+          <p class="link-review" ><%= link_to "+ Review this title", login_path %></p>
+      <% end %>
+  </div>
 
-<div class="reviews">
+
     <% @movie.reviews.order(created_at: :desc).each do |review| %>
         <div class="show-review">
-            <spam class="user-date"><%= review.user[:email] %> | <%= review[:created_at].strftime '%a, %B %d, %Y - %l:%M %p'  %></spam>
+            <span class="user-date"><%= review.user[:name] %> | <%= review[:created_at].strftime '%a, %B %d, %Y - %l:%M %p'  %></span>
             <div class="stars">
                 <% review[:rate].times do %>
                     <spam class="rate">&#9733;</spam>
                 <% end %>
                 <% (5-review[:rate]).times do %>
                     <spam class="rate">&#9734;</spam>
-                <% end %>          
-            </div>        
-
-            <p><%= review[:review] %></p>
+                <% end %>
+            </div>
+          <p class="title"><%= review.title.upcase %></p>
+            <p class="comment"><%= review[:review] %></p>
             <% if @current_user.id == review.user_id %>
-                <%= link_to "Edit Review", edit_movie_review_path(@movie, review), class: "link-review" %>
-                <%= link_to "Delete Review", movie_review_path(@movie, review), :method => 'delete', :data => {:confirm => 'Are you sure?'}, class: "link-review" %>
+                <%= link_to "Edit Review", edit_movie_review_path(@movie, review), class: "edit" %>
+                <%= link_to "Delete Review", movie_review_path(@movie, review), :method => 'delete', :data => {:confirm => 'Are you sure?'}, class: "delete" %>
             <% end %>
         </div>
     <% end %>
