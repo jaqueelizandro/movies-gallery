@@ -1,15 +1,15 @@
 <div class="show-movie">
-    <%= image_tag @movie[:image], :class => "image" %>
+    <%= image_tag @movie[:image], class: "image" %>
     <h1><%= @movie["title"] %></h1>
     <h6><%= @movie["year"] %> | <%= @movie["runtimeStr"] %> | <%= @movie["genres"] %></h6>
-    <p><%= "Director".pluralize(@movie["director"].split(",").length)%>: <%= @movie["director"] %></p>
-    <p>Storyline:</p>
+    <p class="director"><%= "Director".pluralize(@movie["director"].split(",").length)%>: <%= @movie["director"] %></p>
+    <p class="storyline">Storyline:</p>
     <p class="plot"><%= @movie["plot"] %></p>
 
     <% if @current_user.present? %>
-        <%= link_to "+ Review this title", new_movie_review_path(@movie.id), class: "link-review" %>
+        <p class="link-review" ><%= link_to "+ Review this title", new_movie_review_path(@movie.id) %></p>
     <% else %>
-        <%= link_to "+ Review this title", login_path, class: "link-review" %>
+        <p class="link-review" ><%= link_to "+ Review this title", login_path %></p>
     <% end %>
 </div>
 

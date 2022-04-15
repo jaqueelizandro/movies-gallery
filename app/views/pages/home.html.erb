@@ -1,19 +1,18 @@
 <div class="home-container">
-    <div class="home-container search">
-        <%= form_tag(movies_path, method: "get") do %>
+    <div class="search">
+        <%= form_tag(movies_path, method: "get", :class => "form") do %>
             <%= text_field_tag :search, params[:search], placeholder: "Search for a movie...", class: "field" %>
             <%= image_submit_tag("search.png", class: "submit") %>
         <% end %>
     </div>
 
     <h4>RECENTLY ADDED:</h4>
-    <div class="home-display">
+    <div class="display">
         <% @movies.each do |movie| %>
-            <div class="home-display images">
-                <p><%= link_to image_tag(movie[:image], :class => 'image'), movie_path(movie[:imdbid]) %></p>
+            <div>
+                <%= link_to image_tag(movie[:image], :class => 'image'), movie_path(movie[:imdbid]) %>
             </div>
         <% end %>
     </div>
-</div>
 
-<h4>MOST COMMENTED:</h4>
+</div>

@@ -4,9 +4,9 @@
     <% unless params[:search].empty? %>
         <% @movies.each do |movie| %>
         <div class="<%= cycle("index1", "index2") %>">
-            <p><%= link_to image_tag(movie["image"], class: 'image'), movie_path(movie["id"]) %> 
-            <%= link_to movie["title"], movie_path(movie["id"]), class: "link" %> 
-            <%= link_to movie["description"], movie_path(movie["id"]), class: "link" %></p>
+            <%= link_to image_tag(movie["image"], class: 'image'), movie_path(movie["id"]) %>
+            <p class="title"><%= link_to movie["title"], movie_path(movie["id"]), class: "link title" %></p>
+            <p class="description"><%= link_to movie["description"], movie_path(movie["id"]), class: "link description" %></p>
         </div>
         <% end %>
     <% end %>
