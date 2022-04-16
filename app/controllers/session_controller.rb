@@ -10,7 +10,6 @@ class SessionController < ApplicationController
         else
             flash.now[:message] = "Wrong email or password. Try it again!"
             render 'new'
-            # redirect_to new_user_path
         end
     end
   

@@ -1,28 +1,26 @@
 
-<div class="form-review">
-  <%= form_for [@movie, @review] do |f| %>
-    <div class="review">
-      <%= f.radio_button :rate, "5" %>
-      <%= f.label :rate, "☆", value: "5" %>
-    
-      <%= f.radio_button :rate, "4" %>
-      <%= f.label :rate, "☆", value: "4" %>
-      
-      <%= f.radio_button :rate, "3" %>
-      <%= f.label :rate, "☆", value: "3" %>
-      
-      <%= f.radio_button :rate, "2" %>
-      <%= f.label :rate, "☆", value: "2" %>
-      
-      <%= f.radio_button :rate, "1"  %>
-      <%= f.label :rate, "☆", value: "1" %>
-    </div>
+<%= form_for [@movie, @review] do |f| %>
+<div class="review">
+  <%= f.radio_button :rate, "5" %>
+  <%= f.label :rate, "☆", value: "5" %>
 
-    <p><%= f.text_field :title, class: "comment-title" %></p>
+  <%= f.radio_button :rate, "4" %>
+  <%= f.label :rate, "☆", value: "4" %>
 
-    <p><%= f.text_area :review, placeholder: "Write your review here...", class: "comment" %></p>
+  <%= f.radio_button :rate, "3" %>
+  <%= f.label :rate, "☆", value: "3" %>
 
-    <p><%= f.submit class: "button" %></p>
-    
-  <% end %>
+  <%= f.radio_button :rate, "2" %>
+  <%= f.label :rate, "☆", value: "2" %>
+
+  <%= f.radio_button :rate, "1"  %>
+  <%= f.label :rate, "☆", value: "1" %>
 </div>
+
+<%= f.text_field :title, placeholder: "Review title..." %>
+
+<%= f.text_area :review, placeholder: "Write your review here..." %>
+
+<%= f.submit class: "button" %>
+
+<% end %>

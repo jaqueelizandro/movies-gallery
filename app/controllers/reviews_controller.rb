@@ -11,12 +11,12 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    if params[:rate].present?
+    if params[:review][:rate].present?
       review = @movie.reviews.create(review_params)
       @current_user.reviews << review
       redirect_to movie_path(@movie.imdbid)
     else
-      flash.now[:message] = "Rate is a required field."
+      flash.now[:message] = "* Rate is a required field."
       @review = @movie.reviews.build
       render 'new'
     end

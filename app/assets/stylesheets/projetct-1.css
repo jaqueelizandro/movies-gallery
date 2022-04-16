@@ -5,6 +5,7 @@ body {
     margin: 0 auto;
     font-family: 'Nunito', sans-serif;
     background-color: rgb(242,241,227);
+    box-sizing: border-box;
 }
 
 nav{
@@ -52,7 +53,7 @@ nav p {
 .home-container .search .field {
     background-color: rgb(242,241,227);
     height: 3em;
-    width: 35em;
+    width: 24em;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
     border: none;
@@ -79,6 +80,10 @@ nav p {
     height: 15em;
 }
 
+.home-container .display a {
+    align-self: center;
+}
+
 .home-container .display .image {
     height: 12em;
     border-radius: 4px;
@@ -89,6 +94,10 @@ nav p {
     height: 12.5em;
     border-radius: 10px;
     box-shadow: 8px 8px 3px rgba(0, 0, 0, 0.7);
+}
+
+.index-container {
+    padding-left: 3px;
 }
 
 .index-container .index1 {
@@ -132,10 +141,6 @@ nav p {
     color: rgb(92,109,83);
 }
 
-.show-movie {
-
-}
-
 .info-movie {
     color: rgba(0, 0, 0, 0.7);
     border: 1px solid rgb(120,118,118);
@@ -161,7 +166,7 @@ nav p {
 .info-movie h1 {
     grid-area: 1 / 2 / span 1 / span 1;
     align-self: end;
-    font-size: 35px;
+    font-size: 2em;
     margin: 0;
 }
 
@@ -191,6 +196,7 @@ nav p {
     font-size: 15px;
     text-align: justify;
     margin: 0;
+    overflow: scroll;
 }
 
 .info-movie .link-review {
@@ -248,11 +254,11 @@ nav p {
     justify-content: left;
 }
 
-.review>input {
+.review input {
     display: none
 }
 
-.review>label {
+.review label {
     position: relative;
     width: 1em;
     font-size: 20px;
@@ -268,58 +274,23 @@ nav p {
     content: "\2605"
 }
 
-.review>label::before {
+.review label::before {
     content: "\2605";
     position: absolute;
     opacity: 0
 }
 
-.review>label:hover:before,
-.review>label:hover~label:before {
+.review label:hover:before,
+.review label:hover~label:before {
     opacity: 1 !important
 }
 
-.review>input:checked~label:before {
+.review input:checked~label:before {
     opacity: 1
 }
 
-.review:hover>input:checked~label:before {
+.review:hover input:checked~label:before {
     opacity: 0.4
-}
-
-.form-review {
-    background-color: rgb(242,241,227);
-    color: rgb(60,58,58);
-}
-
-.form-review .review {
-    padding-bottom: 10px;
-}
-
-.form-review .comment-title {
-    height: 2em;
-    width: 40em;
-    border-radius: 4px;
-    border-color: rgb(120,118,118);
-    font-size: 15px;
-}
-
-.form-review .comment {
-    height: 10em;
-    width: 50em;
-    border-radius: 4px;
-    border-color: rgb(120,118,118);
-    font-size: 12px;
-}
-
-.form-review .button {
-    height: 3em;
-    width: 55em;
-    border: none;
-    border-radius: 4px;
-    background-color: rgb(120,118,118);
-    color: rgb(242,241,227);
-    font-family: 'Nunito', sans-serif;
 }
 
 .review-container {
@@ -327,7 +298,7 @@ nav p {
     border-radius: 4px;
     display: grid;
     grid-template-columns: 11em auto;
-    grid-template-rows: auto 2em auto auto auto;
+    grid-template-rows: auto 2em auto auto auto auto;
     column-gap: 10px;
     padding: 10px;
 }
@@ -361,26 +332,66 @@ nav p {
     font-size: 12px;
 }
 
-.review-container .form-review {
-    grid-area: 4 / 1 / span 1 / span 2;
+.review-container .message {
+    grid-area: 4 / 1 / span 1 / span 1;
+    color: red;
+    margin: 0;
+}
+
+.review-container .new_review,
+.review-container .edit_review {
+    grid-area: 5 / 1 / span 1 / span 2;
+    display: inline-grid;
+    grid-template-columns: auto;
     color: rgb(60,58,58);
     margin: 0;
 }
 
-.sign-in {
-    display: grid;
-    grid-template-columns: repeat(1, auto);
-    grid-template-rows: repeat(4, auto);
-    justify-content: start;
-    column-gap: 10px;
+.review-container .new_review input,
+.review-container .edit_review input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 2em;
+}
+
+.review-container .new_review textarea,
+.review-container .edit_review textarea {
+    margin-bottom: 10px;
+    height: 10em;
+    border: none;
+}
+
+.review-container .new_review .button,
+.review-container .edit_review .button {
+    justify-self: left;
+    background-color: rgb(120,118,118);
+    color: rgb(242,241,227);
+    border: none;
+}
+
+.user {
     padding: 10px;
-}
-
-.sign-in .form {
-}
-
-.sign-in h4 {
     color: rgb(60,58,58);
-    margin: 0;
-    padding:10px;
+}
+
+.user .message {
+    color: red;
+}
+
+.user .new_user {
+    display: inline-grid;
+    grid-template-columns: auto;
+}
+
+.user .new_user input {
+    margin-bottom: 10px;
+    width: 25em;
+}
+
+.user .new_user .button {
+    justify-self: center;
+    background-color: rgb(120,118,118);
+    color: rgb(242,241,227);
+    border: none;
+    padding: 10px;
 }

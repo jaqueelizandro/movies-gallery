@@ -1,12 +1,12 @@
 <div class="review-container">
-    <h4 class="title">YOUR REVIEW</h4>
+  <h4>WRITE YOUR REVIEW</h4>
 
-    <%= image_tag @movie.image, class: "image" %>
-        
-    <%= @movie.title %>
-    (<%= @movie.year %>)
+  <%= image_tag @movie.image, class: "image" %>
 
-    <%= render :partial => 'form' %>
+  <p class="title"><%= @movie.title %></p>
+  <p class="subtitle">(<%= @movie.year %>)</p>
+
+  <%= render :partial => 'form' %>
 
   <% if flash.now[:message] %>
     <p class="message"><%= flash.now[:message] %></p>

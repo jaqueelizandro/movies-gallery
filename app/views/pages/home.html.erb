@@ -9,9 +9,7 @@
     <h4>RECENTLY ADDED:</h4>
     <div class="display">
         <% @movies.each do |movie| %>
-            <div>
                 <%= link_to image_tag(movie[:image], :class => 'image'), movie_path(movie[:imdbid]) %>
-            </div>
         <% end %>
     </div>
 

@@ -28,7 +28,7 @@
             </div>
           <p class="title"><%= review.title.upcase %></p>
             <p class="comment"><%= review[:review] %></p>
-            <% if @current_user.id == review.user_id %>
+            <% if @current_user.present? && (@current_user.id == review.user_id) %>
                 <%= link_to "Edit Review", edit_movie_review_path(@movie, review), class: "edit" %>
                 <%= link_to "Delete Review", movie_review_path(@movie, review), :method => 'delete', :data => {:confirm => 'Are you sure?'}, class: "delete" %>
             <% end %>
