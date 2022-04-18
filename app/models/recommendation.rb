@@ -9,6 +9,6 @@ module Recommendation
                 recommended[movie] += weight
             end
         end
-        sorted_recommended = recommended.sort_by { |key, value| value }.reverse
+        recommended.sort_by { |key, value| value }.reverse
     end
 end
