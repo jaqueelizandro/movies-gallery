@@ -71,12 +71,15 @@ nav p {
     color: rgb(60,58,58);
     margin: 0;
     padding:10px;
+    background-color: rgb(223,215,164);
+    border-radius: 4px;
 }
 
 .home .display {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding: 10px;
 }
 
 .home .display a {
@@ -90,7 +93,7 @@ nav p {
 }
 
 .home .display .image:hover {
-    height: 12.5em;
+    height: 12.1em;
     border-radius: 10px;
     box-shadow: 8px 8px 3px rgba(0, 0, 0, 0.7);
 }
