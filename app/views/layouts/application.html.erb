@@ -15,7 +15,7 @@
 
       <div class="login">
         <% if @current_user.present? %>
-          <p><%= @current_user.email %></p>
+          <p><%= @current_user.name %></p>
           <p><%= link_to "Sign out", login_path, method: 'delete', class: "login" %></p>
         <% else %>
           <p><%= link_to "Sign in", login_path, class: "login" %></p>

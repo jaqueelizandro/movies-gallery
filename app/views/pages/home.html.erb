@@ -6,8 +6,17 @@
         <% end %>
     </div>
 
-    <h4>RECENTLY ADDED:</h4>
-    <div class="display">
+  <% if @current_user.present? %>
+  <h4>RECOMMENDED FOR YOU, <%= @current_user.name %>:</h4>
+  <div class="display">
+      <% @current_user.recommend_movies.each do |key, value| %>
+        <%= link_to image_tag(key.image, :class => 'image'), movie_path(key.imdbid) %>
+      <% end %>
+  </div>
+  <% end %>
+
+  <h4>RECENTLY ADDED:</h4>
+  <div class="display">
         <% @movies.each do |movie| %>
                 <%= link_to image_tag(movie[:image], :class => 'image'), movie_path(movie[:imdbid]) %>
         <% end %>

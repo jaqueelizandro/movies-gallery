@@ -1,2 +1,12 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<table><h2>Recommended Movies for <%= @user.name %>:</h2>
+  <tr>
+    <th>Movie</th>
+    <th>Rating</th>
+  </tr>
+  <% @user.recommend_movies.each do |key, value| %>
+    <tr>
+      <td><%= key.title %></td>
+      <td><%= value.round(2) %></td>
+    </tr>
+  <% end %>
+</table>
