@@ -8,23 +8,23 @@ class MoviesController < ApplicationController
   end
 
   def show
-    movie = Movie.find_by(imdbid: params[:id])
-    unless movie.nil?
-      if params[:id] == movie.imdbid
-        @movie = movie
+    @movie = Movie.find_by(imdbid: params[:id])
+    unless @movie.nil?
+      if params[:id] == @movie.imdbid
+        @movie = @movie
       end
     else
       uri = URI("https://imdb-api.com/en/API/Title/#{ENV["API_IMDB_KEY"]}/#{params[:id]}")
-      movie = JSON.parse(Net::HTTP.get(uri))
+      @movie = JSON.parse(Net::HTTP.get(uri))
       @movie = Movie.create(
-        title: movie["title"],
-        year: movie["year"],
-        image: movie["image"],
-        plot: movie["plot"],
-        director: movie["directors"],
-        genres: movie["genres"],
-        imdbid: movie["id"],
-        runtime: movie["runtimeStr"]
+        title: @movie["title"],
+        year: @movie["year"],
+        image: @movie["image"],
+        plot: @movie["plot"],
+        director: @movie["directors"],
+        genres: @movie["genres"],
+        imdbid: @movie["id"],
+        runtime: @movie["runtimeStr"]
       )
     end
   end

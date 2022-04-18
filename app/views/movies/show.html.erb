@@ -3,6 +3,7 @@
     <h1><%= @movie[:title] %></h1>
     <h6><%= @movie[:year] %> | <%= @movie[:runtime] %> | <%= @movie[:genres] %></h6>
     <p class="director"><%= "Director".pluralize(@movie[:director].split(",").length)%>: <%= @movie[:director] %></p>
+    Average rate: <%= @movie.reviews.average(:rate) %>
     <p class="storyline">Storyline:</p>
     <p class="plot"><%= @movie[:plot] %></p>
 
