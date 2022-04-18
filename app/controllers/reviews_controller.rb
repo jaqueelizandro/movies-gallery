@@ -2,9 +2,6 @@ class ReviewsController < ApplicationController
   before_action :check_for_login
   before_action :find_movie
   before_action :find_review, :only => [:edit, :update, :destroy]
-  
-  def index
-  end
 
   def new
     @review = @movie.reviews.build
@@ -28,9 +25,6 @@ class ReviewsController < ApplicationController
   def update
     @review.update(review_params)
     redirect_to movie_path(@movie.imdbid)
-  end
-
-  def show
   end
 
   def destroy
