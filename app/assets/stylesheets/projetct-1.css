@@ -19,7 +19,7 @@ nav{
     height: 5em;
 }
 
-nav .home {
+nav a {
     grid-area: 1 / 1 / span 2 / span 1;
     align-self: center;
     font-size: 2em;
@@ -37,7 +37,7 @@ nav p {
     margin: 0;
 }
 
-.home-container .search {
+.home .search {
     background-color: rgb(92,109,83);
     height: 4em;
     display: flex;
@@ -45,12 +45,12 @@ nav p {
     padding: 10px;
 }
 
-.home-container .search .form {
+.home .search .form {
     display: flex;
     align-items: center;
 }
 
-.home-container .search .field {
+.home .search .field {
     background-color: rgb(242,241,227);
     height: 3em;
     width: 24em;
@@ -60,52 +60,51 @@ nav p {
     outline: none;
 }
 
-.home-container .search .submit {
+.home .search .submit {
     background-color: rgb(242,241,227);
     height: 35px;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
 }
 
-.home-container h4 {
+.home h4 {
     color: rgb(60,58,58);
     margin: 0;
     padding:10px;
 }
 
-.home-container .display {
+.home .display {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    height: 15em;
 }
 
-.home-container .display a {
+.home .display a {
     align-self: center;
 }
 
-.home-container .display .image {
+.home .display .image {
     height: 12em;
     border-radius: 4px;
     box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.2);
 }
 
-.home-container .display .image:hover {
+.home .display .image:hover {
     height: 12.5em;
     border-radius: 10px;
     box-shadow: 8px 8px 3px rgba(0, 0, 0, 0.7);
 }
 
-.index-container {
+.movie-index {
     padding-left: 3px;
 }
 
-.index-container .index1 {
+.movie-index .index1 {
     background-color: rgb(223,215,164);
 }
 
-.index-container .index1,
-.index-container .index2 {
+.movie-index .index1,
+.movie-index .index2 {
     border: 1px solid rgb(120,118,118);
     height: 10em;
     display: grid;
@@ -116,36 +115,35 @@ nav p {
     margin-bottom: 10px;
 }
 
-.index-container .image {
+.movie-index .image {
     height: 10em;
     width: 7em;
 }
 
-.index-container a {
+.movie-index a {
     grid-area: 1 / 1 / span 2 / span 1;
 }
 
-.index-container .title {
+.movie-index .title {
     margin: 0;
     grid-area: 1 / 2 / span 1 / span 1;
     align-self: end;
 }
 
-.index-container .description {
+.movie-index .description {
     margin: 0;
     grid-area: 2 / 2 / span 1 / span 1;
     font-size: 12px;
 }
 
-.index-container .link {
+.movie-index .link {
     color: rgb(92,109,83);
 }
 
-.info-movie {
+.movie-show-info {
     color: rgba(0, 0, 0, 0.7);
     border: 1px solid rgb(120,118,118);
     border-radius: 4px;
-    height: 30em;
     display: grid;
     grid-template-columns: 11em auto;
     grid-template-rows: repeat(6, auto);
@@ -155,7 +153,7 @@ nav p {
     padding: 10px;
 }
 
-.info-movie .image {
+.movie-show-info .image {
     grid-area: 1 / 1 / span 4 / span 1;
     place-self: center;
     max-height: 15em;
@@ -163,50 +161,49 @@ nav p {
     padding-bottom: 10px;
 }
 
-.info-movie h1 {
+.movie-show-info h1 {
     grid-area: 1 / 2 / span 1 / span 1;
     align-self: end;
     font-size: 2em;
     margin: 0;
 }
 
-.info-movie h6 {
+.movie-show-info h6 {
     grid-area: 2 / 2 / span 1 / span 1;
     font-size: 12px;
     margin: 0;
     padding-bottom: 20px;
 }
 
-.info-movie .director {
+.movie-show-info .director {
     grid-area: 3 / 2 / span 1 / span 1;
     align-self: start;
-    font-size: 20px;
+    font-size: 15px;
     margin: 0;
 }
 
-.info-movie .storyline {
+.movie-show-info .storyline {
     grid-area: 5 / 1 / span 1 / span 1;
     align-self: end;
     font-size: 12px;
     margin: 0;
 }
 
-.info-movie .plot {
+.movie-show-info .plot {
     grid-area: 6 / 1 / span 1 / span 2;
     font-size: 15px;
     text-align: justify;
     margin: 0;
-    overflow: scroll;
 }
 
-.info-movie .link-review {
+.movie-show-info .link-review {
     grid-area: 7 / 1 / span 1 / span 1;
     margin: 0;
     color: rgb(92,109,83);
     padding-top: 20px;
 }
 
-.show-review {
+.movie-show-review {
     border-bottom: 1px solid rgb(120,118,118);
     color: rgb(242,241,227);
     background-color: rgb(60,58,58);
@@ -219,31 +216,31 @@ nav p {
     padding: 10px;
 }
 
-.show-review .user-date {
+.movie-show-review .user-date {
     grid-area: 1 / 1 / span 1 / span 2;
     font-size: 10px;
 }
 
-.show-review .stars {
+.movie-show-review .stars {
     grid-area: 2 / 1 / span 1 / span 1;
     padding-top: 10px;
 }
 
-.show-review .title {
+.movie-show-review .title {
     grid-area: 3 / 1 / span 1 / span 1;
     font-weight: bold;
 }
 
-.show-review .comment {
+.movie-show-review .comment {
     grid-area: 4 / 1 / span 1 / span 2;
 }
 
-.show-review .edit {
+.movie-show-review .edit {
     grid-area: 5 / 1 / span 1 / span 1;
     color: rgb(223,215,164);
 }
 
-.show-review .delete {
+.movie-show-review .delete {
     grid-area: 5 / 2 / span 1 / span 1;
     color: rgb(223,215,164);
 }
@@ -252,6 +249,14 @@ nav p {
     display: flex;
     flex-direction: row-reverse;
     justify-content: left;
+}
+
+.rate {
+    position: relative;
+    width: 1em;
+    font-size: 20px;
+    color: #FFD600;
+    content: "\2605"
 }
 
 .review input {
@@ -264,14 +269,6 @@ nav p {
     font-size: 20px;
     color: #FFD600;
     cursor: pointer
-}
-
-.rate {
-    position: relative;
-    width: 1em;
-    font-size: 20px;
-    color: #FFD600;
-    content: "\2605"
 }
 
 .review label::before {

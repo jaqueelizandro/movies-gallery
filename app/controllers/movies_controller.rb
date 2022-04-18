@@ -23,7 +23,8 @@ class MoviesController < ApplicationController
         plot: movie["plot"],
         director: movie["directors"],
         genres: movie["genres"],
-        imdbid: movie["id"]
+        imdbid: movie["id"],
+        runtime: movie["runtimeStr"]
       )
     end
   end

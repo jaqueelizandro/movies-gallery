@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_15_073546) do
+ActiveRecord::Schema.define(version: 2022_04_16_052314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2022_04_15_073546) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "imdbid"
+    t.text "runtime"
   end
 
   create_table "reviews", force: :cascade do |t|
