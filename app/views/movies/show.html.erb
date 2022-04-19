@@ -4,7 +4,7 @@
     <h6><%= @movie[:year] %> | <%= @movie[:runtime] %> | <%= @movie[:genres] %></h6>
     <p class="director"><%= "Director".pluralize(@movie[:director].split(",").length)%>: <%= @movie[:director] %></p>
     <% if @movie.reviews.present? %>
-        <p class="avg-rate"><spam class="rate">&#9733;</spam> Average rate: <%= @movie.reviews.average(:rate) %></p>
+        <p class="avg-rate"><spam class="rate">&#9733;</spam> Average rate: <%= @movie.reviews.average(:rate).round(2) %></p>
     <% end %>
     <p class="storyline">Storyline:</p>
     <p class="plot"><%= @movie[:plot] %></p>
