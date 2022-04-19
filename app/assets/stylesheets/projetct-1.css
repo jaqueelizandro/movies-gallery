@@ -185,6 +185,14 @@ nav p {
     margin: 0;
 }
 
+.movie-show-info .avg-rate,
+.movie-show-info .rate {
+    grid-area: 4 / 2 / span 1 / span 1;
+    align-self: start;
+    font-size: 15px;
+    margin: 0;
+}
+
 .movie-show-info .storyline {
     grid-area: 5 / 1 / span 1 / span 1;
     align-self: end;

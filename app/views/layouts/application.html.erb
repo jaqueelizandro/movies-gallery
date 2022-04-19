@@ -12,7 +12,6 @@
   <body>
   <nav>
       <%= link_to "movies gallery", root_path %>
-
       <div class="login">
         <% if @current_user.present? %>
           <p><%= @current_user.name %></p>
