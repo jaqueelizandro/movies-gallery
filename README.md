@@ -13,6 +13,14 @@ In this application, after making a sign-in / sign-up, you will be able to make 
 * Every movie has been chosen (clicked) for the first time, include a new item in the database;
 * The recommendation system calculates the number of reviewed movies the user has in common with another user; the more movies the user share with another user, the more weight will be put on their recommendation; the weight is calculated by dividing the total number of shared movies by the total number of all movies the other user reviewed.
 
+## Tech Stack
+* Ruby
+* Ruby on Rails
+* CSS
+
+## Association Models Diagram
+![association](./app/assets/images/association-diagram.png)
+
 ## Images
 ![homepage](./app/assets/images/home-page.png)
 ![infomovie](./app/assets/images/show-movie-info-and-reviews.png)
