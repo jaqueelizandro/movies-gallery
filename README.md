@@ -5,9 +5,9 @@ This application is a movie review with recommendations.
 You can access and use this application at: [Project 1 - Movies Gallery](https://projectone-moviesgallery.herokuapp.com).
 
 ## Introduction
-This was my second project for the General Assembly Software Engineering Immersive bootcamp.
+After five weeks of classes, this was my second project for the General Assembly Software Engineering Immersive boot camp.
 
-The core requirement for this project was to create a CRUD system -  with 3 model associations; partial views (to make a DRY code); handle invalid data in the forms; basic user authorization and authentication system; deployment on Heroku. Besides that, I also challenged myself to deal with an external API.
+The core requirement for this project was to create a CRUD system - with 3 model associations; partial views (to make a DRY code); handle invalid data in the forms; basic user authorization and authentication system; deployment on Heroku. Besides that, I also challenged myself to deal with an external API (IMDB).
 
 ## Project Description
 In this application, after making a sign-in / sign-up, you will be able to make a review of a movie with a rate and a comment. There is a simple recommendation system that will recommender movies you didn't do a review based on how many movies you have in common with another user.
