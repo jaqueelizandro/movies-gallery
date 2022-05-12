@@ -22,6 +22,7 @@ In this application, after making a sign-in / sign-up, you will be able to make 
 ![association](./app/assets/images/association-diagram.png)
 
 ## Images
+![screen-gif](./app/assets/images/gif.gif)
 ![homepage](./app/assets/images/home-page.png)
 ![infomovie](./app/assets/images/show-movie-info-and-reviews.png)
 ![makereview](./app/assets/images/make-your-review.png)
