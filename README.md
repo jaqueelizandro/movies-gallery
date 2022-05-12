@@ -4,6 +4,11 @@ This application is a movie review with recommendations.
 ## Try it on
 You can access and use this application at: [Project 1 - Movies Gallery](https://projectone-moviesgallery.herokuapp.com).
 
+## Introduction
+This was my second project for the General Assembly Software Engineering Immersive bootcamp.
+
+The core requirement for this project was to create a CRUD system -  with 3 model associations; partial views (to make a DRY code); handle invalid data in the forms; basic user authorization and authentication system; deployment on Heroku. Besides that, I also challenged myself to deal with an external API.
+
 ## Project Description
 In this application, after making a sign-in / sign-up, you will be able to make a review of a movie with a rate and a comment. There is a simple recommendation system that will recommender movies you didn't do a review based on how many movies you have in common with another user.
 
@@ -17,6 +22,7 @@ In this application, after making a sign-in / sign-up, you will be able to make 
 * Ruby
 * Ruby on Rails
 * CSS
+* PostgreSQL
 
 ## Association Models Diagram
 ![association](./app/assets/images/association-diagram.png)
